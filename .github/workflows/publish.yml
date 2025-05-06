@@ -13,8 +13,8 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["3.10"]
-        os: [ ubuntu-latest ]
+        os: [ubuntu-latest]
+        python-version: ["3.13"]
 
     runs-on: ${{ matrix.os }}
 
@@ -42,7 +42,7 @@ jobs:
 
       - name: Build Package 🐍
         run: poetry build
-      
+
       - name: Dry-run Publish to PyPI 😬
         run: poetry publish --dry-run
 
